@@ -1,3 +1,93 @@
 <resources>
-    <string name="app_name">TiendaAppAdmin</string>
+    <string name="app_name">NoaNails</string>
+    <string name="pass">Introduce contrasña</string>
+    <string name="entrar">Entra</string>
+    <string name="registrar">Registrate</string>
+    <string name="nombre">Introduzca nombre</string>
+    <string name="ape1">Introduzca primer apellido</string>
+    <string name="ape2">Introduzca segundo apellido</string>
+    <string name="num_telf2">Introduzca nº de teléfono</string>
+    <string name="email">Introduzca email</string>
+    <string name="emailConfi">Confirmar email</string>
+    <string name="passReg">Introduzca contraseña</string>
+    <string name="passReg2">Confirmar contraseña</string>
+    <string name="confirmarReg">Confirmar</string>
+    <string name="pedir_cita">Pedir cita</string>
+    <string name="ver_citas">Ver citas</string>
+    <string name="perfil">Perfil</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Seleccione la hora:</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="fechaBt">*PULSE AQUÍ PARA SELECCIONAR FECHA*</string>
+
+    <string name="info">Por favor no seas un trolazo</string>
+
+    <string name="HORA1">09:00</string>
+    <string name="HORA2">10:00</string>
+    <string name="HORA3">11:00</string>
+    <string name="HORA4">12:00</string>
+    <string name="HORA5">15:00</string>
+    <string name="HORA6">16:00</string>
+    <string name="HORA7">17:00</string>
+    <string name="HORA8">18:00</string>
+    <string name="HORA9">19:00</string>
+
+    <string name="VerCita">Historial citas</string>
+    <string name="VerCitaActual">Citas actuales</string>
+    <string name="modificarCita">Modificar</string>
+    <string name="eliminarCita">Eliminar</string>
+
+    <string name="mostrarFechaCard">dd/mm/yyyy</string>
+    <string name="mostrarHoraCard">hh/mm</string>
+    <string name="citaCard">Cita:</string>
+    <string name="mostrarServicio">Servicio</string>
+    <string name="volver">Volver</string>
+
+    <string name="img1">Imagen principal</string>
+    <string name="resPass">¿Has olvidado la contraseña?</string>
+
+    <string name="precio">Precio aprox: 25€</string>
+    <string name="tiempo">Tiempo aprox: 1h</string>
+    <string name="tipo">Acrílicas</string>
+
+    <string name="precio1">Precio aprox: 25€</string>
+    <string name="tiempo1">Tiempo aprox: 1h</string>
+    <string name="tipo1">Gel</string>
+
+    <string name="precio2">Precio aprox: 25€</string>
+    <string name="tiempo2">Tiempo aprox: 1h</string>
+    <string name="tipo2">Porcelana</string>
+
+    <string name="precio3">Precio aprox: 25€</string>
+    <string name="tiempo3">Tiempo aprox: 1h</string>
+    <string name="tipo3">Permanente</string>
+
+    <string name="precio4">Precio aprox: 25€</string>
+    <string name="tiempo4">Tiempo aprox: 1h</string>
+    <string name="tipo4">3D</string>
+
+    <!-- Fregment -->
+    <string name="nombrePerfil">Nombre:</string>
+    <string name="nombrePerfil2"></string>
+    <string name="apellidosPerfil">Apellidos:</string>
+    <string name="apellidosPerfil2"></string>
+    <string name="telefonoPerfil">Teléfono: </string>
+    <string name="telefonoPerfil2"></string>
+    <string name="emailPerfil">Email:</string>
+
+    <string name="introNuEmail">Introduzca nuevo email</string>
+    <string name="confirmNuEmail">Confirmar nuevo email</string>
+
+    <string name="btEditar">Editar Perfil</string>
+    <string name="btEditar1">Editar Email</string>
+    <string name="btPerf">Resumen</string>
+
+    <string name="infoPer"><u>RESUMEN PERFIL</u></string>
+    <string name="editPerf"><u>DATOS PERSONALES</u></string>
+    <string name="editPerfEmail"><u>EMAIL</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
