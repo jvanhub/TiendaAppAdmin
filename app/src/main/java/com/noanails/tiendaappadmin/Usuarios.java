@@ -20,13 +20,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class Usuarios extends AppCompatActivity {
     private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
     private String uId = "";
     private String id;
+    Bundle bundle;
+    private String idRefTablaButton;
+
     ListAdapter listAdapter;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
@@ -38,10 +40,14 @@ public class Usuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
 
+        //Recibe datos (id del boton) desde ListaAdapter2.java -> bindData.
+        bundle = getIntent().getExtras();
+        idRefTablaButton = bundle.getString("boton");
+
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         id = mAuth.getUid();
-        Button verUsuarios = (Button) findViewById(R.id.buttonVerCitas);
+        Button verUsuarios = (Button) findViewById(R.id.buttonVerUsuarios);
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
 
@@ -74,10 +80,8 @@ public class Usuarios extends AppCompatActivity {
                         ap2BBDD = snapshot.child("apellidos2").getValue().toString();
                         nTelfBBDD = snapshot.child("n_telefonos").getValue().toString();
                         emailBBDD = snapshot.child("emails").getValue().toString();
+                        insertElements();
 
-                        if (uId.equals(id)) {
-                            insertElements();
-                        }
                     } catch (NullPointerException n) {
                         Toast.makeText(Usuarios.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
                     }

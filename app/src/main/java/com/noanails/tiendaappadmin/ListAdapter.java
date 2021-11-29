@@ -81,9 +81,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         void bindData(final ListElemnt item){
             usuario.setText(item.getNombre());
             nombre.setText(item.getNombre());
-            ap1.setText(item.getNombre());
-            ap2.setText(item.getNombre());
-            nTelf.setText(item.getNombre());
+            ap1.setText(item.getAp1());
+            ap2.setText(item.getAp2());
+            nTelf.setText(item.getnTelf());
             email.setText(item.getEmail());
 
             btMod.setContentDescription(item.getIdUsuario());
