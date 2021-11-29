@@ -20,10 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Usuarios extends AppCompatActivity {
 
@@ -31,7 +28,7 @@ public class Usuarios extends AppCompatActivity {
     private String id;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
-    List<ListElemnt> elements;
+    List<ListElemnt_Usuarios> elements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,11 +88,11 @@ public class Usuarios extends AppCompatActivity {
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
-        elements.add(new ListElemnt(nombreBBDD, ap1BBDD, ap2BBDD,nTelfBBDD,emailBBDD,idUsuario));
-        ListAdapter listAdapter = new ListAdapter(elements, this);
+        elements.add(new ListElemnt_Usuarios(nombreBBDD, ap1BBDD, ap2BBDD,nTelfBBDD,emailBBDD,idUsuario));
+        ListAdapterUsuarios listAdapterUsuarios = new ListAdapterUsuarios(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(listAdapter);
+        recyclerView.setAdapter(listAdapterUsuarios);
     }
 }

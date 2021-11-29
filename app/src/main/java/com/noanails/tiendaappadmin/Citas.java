@@ -1,26 +1,12 @@
 package com.noanails.tiendaappadmin;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class Citas extends AppCompatActivity {
@@ -30,10 +16,10 @@ public class Citas extends AppCompatActivity {
     private String uId = "";
     private String id;
     private String idCita;
-    ListAdapter listAdapter;
+    ListAdapterUsuarios listAdapterUsuarios;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
-    List<ListElemnt> elements;
+    List<ListElemnt_Usuarios> elements;
     private String servicio="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,12 +88,12 @@ public class Citas extends AppCompatActivity {
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
-        elements.add(new ListElemnt(servicioBBDD, fechaBBDD, horaBBDD, null));
-        ListAdapter listAdapter = new ListAdapter(elements, this);
+        elements.add(new ListElemnt_Usuarios(servicioBBDD, fechaBBDD, horaBBDD, null));
+        ListAdapterUsuarios listAdapterUsuarios = new ListAdapterUsuarios(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(listAdapter);
+        recyclerView.setAdapter(listAdapterUsuarios);
     }
 
     //Metodo para recoger todas las fechas desde el día de hoy incuido, las fechas pasadas no.
@@ -150,12 +136,12 @@ public class Citas extends AppCompatActivity {
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElementsActual() {
-        elements.add(new ListElemnt(servicioBBDD,fechaBBDD, horaBBDD, idCita));
-        listAdapter = new ListAdapter2(elements, this);
+        elements.add(new ListElemnt_Usuarios(servicioBBDD,fechaBBDD, horaBBDD, idCita));
+        listAdapterUsuarios = new ListAdapter2(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(listAdapter);
+        recyclerView.setAdapter(listAdapterUsuarios);
     }*/
     }
 }
