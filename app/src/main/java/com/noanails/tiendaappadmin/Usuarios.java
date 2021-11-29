@@ -26,25 +26,17 @@ import java.util.List;
 import java.util.Map;
 
 public class Usuarios extends AppCompatActivity {
-    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
-    private String uId = "";
-    private String id;
-    Bundle bundle;
-    private String idRefTablaButton;
 
+    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
+    private String id;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
     List<ListElemnt> elements;
-    private String servicio="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
-
-        //Recibe datos (id del boton) desde ListaAdapter2.java -> bindData.
-        bundle = getIntent().getExtras();
-        idRefTablaButton = bundle.getString("boton");
 
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();

@@ -90,7 +90,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             btMod.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(),Usuarios.class);
+                    Intent intent = new Intent(v.getContext(),Modificar_Usuarios.class);
                     intent.putExtra("boton",btMod.getContentDescription());
                     v.getContext().startActivity(intent);
                 }

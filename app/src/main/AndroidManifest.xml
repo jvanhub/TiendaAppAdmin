@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TiendaAppAdmin">
         <activity
+            android:name=".Modificar_Usuarios"
+            android:exported="false" />
+        <activity
             android:name=".ListElemnt"
             android:exported="false" />
         <activity
