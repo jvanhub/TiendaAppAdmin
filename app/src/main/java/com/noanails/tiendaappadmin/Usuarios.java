@@ -20,7 +20,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Usuarios extends AppCompatActivity {
     private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
@@ -29,7 +32,6 @@ public class Usuarios extends AppCompatActivity {
     Bundle bundle;
     private String idRefTablaButton;
 
-    ListAdapter listAdapter;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
     List<ListElemnt> elements;
