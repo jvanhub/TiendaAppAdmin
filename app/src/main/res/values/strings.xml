@@ -23,6 +23,9 @@
 
     <string name="Usuarios">Usuarios</string>
     <string name="VerCitaActual">Citas actuales</string>
+    VerCita
+    <string name="VerCita">Historial citas</string>
+
     <string name="modificarCita">Modificar</string>
     <string name="eliminarCita">Eliminar</string>
 
