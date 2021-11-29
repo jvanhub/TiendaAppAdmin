@@ -12,8 +12,8 @@
     <string name="passReg">Introduzca contraseña</string>
     <string name="passReg2">Confirmar contraseña</string>
     <string name="confirmarReg">Confirmar</string>
-    <string name="pedir_cita">Pedir cita</string>
-    <string name="ver_citas">Ver citas</string>
+    <string name="usuario">Usuarios</string>
+    <string name="citas">Citas de usuarios</string>
     <string name="perfil">Perfil</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="fecha">Fecha</string>
@@ -21,27 +21,17 @@
     <string name="confirmar">Confirmar</string>
     <string name="fechaBt">*PULSE AQUÍ PARA SELECCIONAR FECHA*</string>
 
-    <string name="info">Por favor no seas un trolazo</string>
-
-    <string name="HORA1">09:00</string>
-    <string name="HORA2">10:00</string>
-    <string name="HORA3">11:00</string>
-    <string name="HORA4">12:00</string>
-    <string name="HORA5">15:00</string>
-    <string name="HORA6">16:00</string>
-    <string name="HORA7">17:00</string>
-    <string name="HORA8">18:00</string>
-    <string name="HORA9">19:00</string>
-
-    <string name="VerCita">Historial citas</string>
+    <string name="Usuarios">Usuarios</string>
     <string name="VerCitaActual">Citas actuales</string>
     <string name="modificarCita">Modificar</string>
     <string name="eliminarCita">Eliminar</string>
 
-    <string name="mostrarFechaCard">dd/mm/yyyy</string>
-    <string name="mostrarHoraCard">hh/mm</string>
-    <string name="citaCard">Cita:</string>
-    <string name="mostrarServicio">Servicio</string>
+    <string name="apeUsu">Primer apellido:</string>
+    <string name="ape2Usu">Segundo apellido:</string>
+    <string name="emailUsu">Email:</string>
+    <string name="telfUsu">Teléfono:</string>
+    <string name="usuarioCard">Usuario.</string>
+    <string name="nombreUsu">Nombre:</string>
     <string name="volver">Volver</string>
 
     <string name="img1">Imagen principal</string>

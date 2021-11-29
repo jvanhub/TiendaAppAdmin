@@ -90,9 +90,7 @@ public class Registro extends AppCompatActivity {
     }
 
     public void registrar() {
-        /* Lo paso a lambda:
-        mAuth.createUserWithEmailAndPassword(email,contrasenya).addOnCompleteListener(new OnCompleteListener<AuthResult>()
-        */
+
         mAuth.createUserWithEmailAndPassword(email, contrasenya).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
 
@@ -102,9 +100,6 @@ public class Registro extends AppCompatActivity {
                 map.put("apellidos2", apellido2);
                 map.put("n_telefonos", n_tefl);
                 map.put("emails", email);
-
-                /* Remplazo para evitar que pueda producir un NullPointerException.
-                String id = task.getResult().getUser().getUid();*/
                 String id = Objects.requireNonNull(task.getResult().getUser()).getUid();
 
                 mDatabase.child("Usuarios").child(id).setValue(map);
@@ -112,6 +107,8 @@ public class Registro extends AppCompatActivity {
                 //Correo de verificación.
                 user = mAuth.getCurrentUser();
                 user.sendEmailVerification();
+                Toast.makeText(Registro.this, "Registro completado, confirme email en su bandeja de entrada o correo no deseado.", Toast.LENGTH_LONG).show();
+
                 startActivity(new Intent(Registro.this, Login.class));
                 finish();
             } else {

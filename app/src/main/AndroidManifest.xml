@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TiendaAppAdmin">
         <activity
+            android:name=".ListElemnt"
+            android:exported="false" />
+        <activity
+            android:name=".Citas"
+            android:exported="false" />
+        <activity
+            android:name=".Usuarios"
+            android:exported="false" />
+        <activity
             android:name=".Administracion"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -21,10 +30,10 @@
             android:name=".Login"
             android:exported="true"
             android:screenOrientation="portrait" />
-            <activity
-                android:name=".SplashScreenMain"
-                android:exported="true"
-                android:screenOrientation="portrait" >
+        <activity
+            android:name=".SplashScreenMain"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
