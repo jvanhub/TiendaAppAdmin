@@ -1,4 +1,4 @@
-package com.noanails.tiendaappadmin;
+package clasesObjeto;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,18 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.noanails.tiendaappadmin.Modificar_Usuarios;
+import com.noanails.tiendaappadmin.R;
 
 import java.util.List;
 
 //Esta clase relaciona la parte grafica con los datos (Fecha y Hora) que vamos ha tratar.
 public class ListAdapterUsuarios extends RecyclerView.Adapter<ListAdapterUsuarios.ViewHolder> {
 
-    private List<ListElemnt_Usuarios>mData;//Esta lista tiene todos los datos de ListElement.
+    private List<ListElement_Usuarios>mData;//Esta lista tiene todos los datos de ListElement.
     private LayoutInflater mInflater;//Describe de que archivo proviene.
     public Context context;//Define de que clase estamos llamando este adaptador.
 
     //Constructor.
-    public ListAdapterUsuarios(List<ListElemnt_Usuarios> itemList, Context context){
+    public ListAdapterUsuarios(List<ListElement_Usuarios> itemList, Context context){
         this.mInflater = LayoutInflater.from(context);
         this.context=context;
         this.mData = itemList;
@@ -53,7 +55,7 @@ public class ListAdapterUsuarios extends RecyclerView.Adapter<ListAdapterUsuario
     }
 
     //Este metodo sirve para redefinir los elementos de la lista.
-    public void setItems(List<ListElemnt_Usuarios> items){
+    public void setItems(List<ListElement_Usuarios> items){
         mData=items;
     }
 
@@ -77,7 +79,7 @@ public class ListAdapterUsuarios extends RecyclerView.Adapter<ListAdapterUsuario
             btElim = itemView.findViewById(R.id.buttonDelet);
         }
 
-        void bindData(final ListElemnt_Usuarios item){
+        void bindData(final ListElement_Usuarios item){
             usuario.setText(item.getNombre());
             nombre.setText(item.getNombre());
             ap1.setText(item.getAp1());
@@ -89,7 +91,7 @@ public class ListAdapterUsuarios extends RecyclerView.Adapter<ListAdapterUsuario
             btMod.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(),Modificar_Usuarios.class);
+                    Intent intent = new Intent(v.getContext(), Modificar_Usuarios.class);
                     intent.putExtra("boton",btMod.getContentDescription());
                     v.getContext().startActivity(intent);
                 }

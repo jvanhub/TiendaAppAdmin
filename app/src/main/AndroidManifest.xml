@@ -11,16 +11,16 @@
         android:theme="@style/Theme.TiendaAppAdmin">
         <activity
             android:name=".Modificar_Usuarios"
-            android:exported="false" />
-        <activity
-            android:name=".ListElemnt_Usuarios"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Citas"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Usuarios"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Administracion"
             android:exported="false"

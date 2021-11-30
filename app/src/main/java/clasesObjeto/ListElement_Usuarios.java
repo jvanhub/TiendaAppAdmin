@@ -1,9 +1,9 @@
-package com.noanails.tiendaappadmin;
+package clasesObjeto;
 
-public class ListElemnt_Usuarios {
+public class ListElement_Usuarios {
     private String nombre, ap1, ap2, nTelf, email, idUsuario;
 
-    public ListElemnt_Usuarios(String nombre, String ap1, String ap2, String nTelf, String email, String idUsuario) {
+    public ListElement_Usuarios(String nombre, String ap1, String ap2, String nTelf, String email, String idUsuario) {
         this.nombre = nombre;
         this.ap1 = ap1;
         this.ap2 = ap2;

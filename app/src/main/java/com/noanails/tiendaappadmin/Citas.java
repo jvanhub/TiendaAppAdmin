@@ -9,6 +9,9 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.List;
 
+import clasesObjeto.ListAdapterUsuarios;
+import clasesObjeto.ListElement_Usuarios;
+
 public class Citas extends AppCompatActivity {
     private String servicioBBDD = "";
     private String fechaBBDD = "";
@@ -19,7 +22,7 @@ public class Citas extends AppCompatActivity {
     ListAdapterUsuarios listAdapterUsuarios;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
-    List<ListElemnt_Usuarios> elements;
+    List<ListElement_Usuarios> elements;
     private String servicio="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
