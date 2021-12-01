@@ -23,16 +23,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import clasesObjeto.ListAdapterUsuarios;
-import clasesObjeto.ListElement_Usuarios;
+import clasesObjeto.ListAdapterCitas;
+import clasesObjeto.ListElement_Citas;
 
 public class Citas extends AppCompatActivity {
-    private String servicioBBDD = "";
-    private String fechaBBDD = "";
-    private String horaBBDD = "";
-    private String uId = "";
-    private String id;
-    private String idCita;
+    private String servicioBBDD,fechaBBDD,horaBBDD,uId,id,idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario="";
     ListAdapterCitas listAdapterCitas;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
@@ -53,7 +48,9 @@ public class Citas extends AppCompatActivity {
         verCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recogerCitas();            }
+                recogerCitas();
+                recogerUsuarios();
+            }
         });
 
         volver.setOnClickListener(new View.OnClickListener() {
@@ -99,10 +96,35 @@ public class Citas extends AppCompatActivity {
             }
         });
     }
+    public void recogerUsuarios() {
+        mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                elements.clear();
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    try {
+                        nombreBBDD = snapshot.child("nombres").getValue().toString();
+                        nTelfBBDD = snapshot.child("n_telefonos").getValue().toString();
+                        emailBBDD = snapshot.child("emails").getValue().toString();
+                        insertElements();
+
+                    } catch (NullPointerException n) {
+                        Toast.makeText(Citas.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Citas.this, "Error BBDD", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
-        elements.add(new ListElement_Citas(servicioBBDD,fechaBBDD, horaBBDD, idCita));
+        elements.add(new ListElement_Citas(servicioBBDD,fechaBBDD, horaBBDD, idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario));
         listAdapterCitas = new ListAdapterCitas(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);

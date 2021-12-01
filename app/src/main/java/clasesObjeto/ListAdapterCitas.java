@@ -1,6 +1,4 @@
-package com.noanails.tiendaappadmin;
-
-import static androidx.core.content.ContextCompat.startActivity;
+package clasesObjeto;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.noanails.tiendaappadmin.Citas;
+import com.noanails.tiendaappadmin.Modificar_Citas;
+import com.noanails.tiendaappadmin.R;
 
 import java.util.List;
 
@@ -61,7 +62,7 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView mostrar, fecha, hora, servicio;
+        TextView mostrar, fecha, hora, servicio, nombre, email, telefono;
         Button btMod, btElim;
         DatabaseReference dbr;
 
@@ -73,6 +74,9 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
             fecha = itemView.findViewById(R.id.textViewFechaCard2);
             hora = itemView.findViewById(R.id.textViewHoraCard2);
             servicio = itemView.findViewById(R.id.textViewServicio2);
+            nombre= itemView.findViewById(R.id.textViewNombre);
+            email = itemView.findViewById(R.id.textViewEmail);
+            telefono = itemView.findViewById(R.id.textViewTelf);
             btMod = itemView.findViewById(R.id.buttonModifi);
             btElim = itemView.findViewById(R.id.buttonDelet);
         }
@@ -81,6 +85,10 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
             fecha.setText(item.getFecha());
             hora.setText(item.getHora());
             servicio.setText(item.getServicio());
+            nombre.setText(item.getNombre());
+            email.setText(item.getEmail());
+            telefono.setText(item.getnTelf());
+
             btElim.setContentDescription(item.getIdCita());
 
             btElim.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +96,7 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
                 public void onClick(View v) {
                     dbr.child("Reservas").child(btElim.getContentDescription().toString()).removeValue();
                     Toast.makeText(v.getContext(), "La cita se ha eliminado correctamente.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(v.getContext(),Citas.class);
+                    Intent intent = new Intent(v.getContext(), Citas.class);
                     v.getContext().startActivity(intent);
                 }
             });
@@ -97,7 +105,7 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
             btMod.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(),Modificar_Citas.class);
+                    Intent intent = new Intent(v.getContext(), Modificar_Citas.class);
                     intent.putExtra("boton",btMod.getContentDescription());
                     v.getContext().startActivity(intent);
                 }

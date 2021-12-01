@@ -57,6 +57,48 @@
             android:textColorHint="#000000"
             android:textSize="16sp"
             android:textStyle="italic" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/textViewNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombreUsu"
+            android:fontFamily="serif"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="16sp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/emailUsu"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewTelf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/telfUsu"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
