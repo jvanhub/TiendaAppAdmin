@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.noanails.tiendaappadmin">
+    package="com.noanails.tiendaappadmin" >
 
     <application
         android:allowBackup="true"
@@ -8,19 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TiendaAppAdmin">
+        android:theme="@style/Theme.TiendaAppAdmin" >
+        <activity
+            android:name=".Modificar_Citas"
+            android:exported="false" />
         <activity
             android:name=".Modificar_Usuarios"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Citas"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Usuarios"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Administracion"
             android:exported="false"
@@ -36,7 +39,7 @@
         <activity
             android:name=".SplashScreenMain"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

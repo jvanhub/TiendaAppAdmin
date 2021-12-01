@@ -69,6 +69,12 @@
     <string name="telefonoPerfil2"></string>
     <string name="emailPerfil">Email:</string>
 
+    <string name="mostrarFechaCard">dd/mm/yyyy</string>
+    <string name="mostrarHoraCard">hh/mm</string>
+    <string name="citaCard">Cita:</string>
+    <string name="mostrarServicio">Servicio</string>
+
+
     <string name="introNuEmail">Introduzca nuevo email</string>
     <string name="confirmNuEmail">Confirmar nuevo email</string>
 
