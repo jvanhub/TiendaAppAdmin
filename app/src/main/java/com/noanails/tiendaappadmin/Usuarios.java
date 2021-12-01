@@ -60,7 +60,7 @@ public class Usuarios extends AppCompatActivity {
         });
     }
 
-    //Se encarga de recger, comparar e insertar los datos junto con los elementos.
+    //Se encarga de recoger, comparar e insertar los datos junto con los elementos.
     public void recogerUsuarios() {
         mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
             @Override
@@ -69,11 +69,13 @@ public class Usuarios extends AppCompatActivity {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     try {
+                        idUsuario = snapshot.getValue().toString();
                         nombreBBDD = snapshot.child("nombres").getValue().toString();
                         ap1BBDD = snapshot.child("apellidos").getValue().toString();
                         ap2BBDD = snapshot.child("apellidos2").getValue().toString();
                         nTelfBBDD = snapshot.child("n_telefonos").getValue().toString();
                         emailBBDD = snapshot.child("emails").getValue().toString();
+                        idUsuario = snapshot.getKey();
                         insertElements();
 
                     } catch (NullPointerException n) {

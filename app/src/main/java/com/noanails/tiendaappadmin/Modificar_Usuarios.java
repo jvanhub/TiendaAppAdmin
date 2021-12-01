@@ -47,7 +47,7 @@ public class Modificar_Usuarios extends AppCompatActivity {
         tvTelf = findViewById(R.id.editTextModApe2);
         tvEail = findViewById(R.id.editTextModPhone);
 
-        mmDatabase.child("Usuarios").child(mmAuth.getUid()).addValueEventListener(new ValueEventListener() {
+        mmDatabase.child("Usuarios").child(idRefTablaButton).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 nombreBBDD = snapshot.child("nombres").getValue().toString();
