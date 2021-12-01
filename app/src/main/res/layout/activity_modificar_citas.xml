@@ -4,6 +4,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/imgnail"
+    android:orientation="vertical"
     tools:context=".Modificar_Citas">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayout8m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/button_fechaMod"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#80114A"
+                android:fontFamily="serif"
+                android:text="@string/fechaBt"
+                android:textAllCaps="false"
+                android:textColor="#A7FF98"
+                android:textSize="20sp"
+                app:cornerRadius="20dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewHoram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#80114A"
+                android:fontFamily="serif"
+                android:text="@string/hora"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_M"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radiobutton9_00m"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA1" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton10_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA2" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton11_00m"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA3" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton12_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA4" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton15_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA5" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton16_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA6" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton17_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA7" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton18_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA8" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton19_00m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:minHeight="48dp"
+                    android:text="@string/HORA9" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_confirmar_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#80114A"
+                    android:text="@string/confirmar"
+                    android:textAllCaps="false"
+                    app:cornerRadius="10dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/buttonVolver_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#80114A"
+                    android:text="@string/volver"
+                    android:textAllCaps="false"
+                    app:cornerRadius="10dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout >

@@ -84,10 +84,8 @@ public class Citas extends AppCompatActivity {
                         servicioBBDD = snapshot.child("servicio").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
                         idCita = snapshot.getKey();
-                        if (uId.equals(id)) {
-                            if(((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)){
-                                insertElements();
-                            }
+                        if(((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)){
+                            insertElements();
                         }
                     }
                 }catch (NullPointerException n){
