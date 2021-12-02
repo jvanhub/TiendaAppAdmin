@@ -42,6 +42,6 @@ public class SplashScreenMain extends AppCompatActivity {
         };
 
         Timer tiempo = new Timer();
-        tiempo.schedule(tt,5000);
+        tiempo.schedule(tt,2500);
     }
 }
