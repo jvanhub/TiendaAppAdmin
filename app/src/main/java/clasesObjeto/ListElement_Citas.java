@@ -3,9 +3,9 @@ package clasesObjeto;
 //Clase que se encarga de crear los elementos que se van a utilizar para pasar la fecha y hora.
 
 public class ListElement_Citas {
-    private String servicio,fecha,hora,idCita,nombre,nTelf,email,idUsuario;;
+    private String servicio,fecha,hora,idCita,nombre,nTelf,email;;
 
-    public ListElement_Citas(String servicio, String fecha, String hora, String idCita, String nombre, String nTelf, String email, String idUsuario) {
+    public ListElement_Citas(String servicio, String fecha, String hora, String idCita, String nombre, String nTelf, String email) {
         this.servicio = servicio;
         this.fecha = fecha;
         this.hora = hora;
@@ -13,7 +13,6 @@ public class ListElement_Citas {
         this.nombre = nombre;
         this.nTelf = nTelf;
         this.email = email;
-        this.idUsuario = idUsuario;
     }
 
     public String getServicio() {
@@ -72,12 +71,5 @@ public class ListElement_Citas {
         this.email = email;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 }
 

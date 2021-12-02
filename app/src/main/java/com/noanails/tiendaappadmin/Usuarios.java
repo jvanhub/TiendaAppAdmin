@@ -28,7 +28,6 @@ import clasesObjeto.ListElement_Usuarios;
 public class Usuarios extends AppCompatActivity {
 
     private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
-    private String id;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
     List<ListElement_Usuarios> elements;
@@ -40,7 +39,6 @@ public class Usuarios extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        id = mAuth.getUid();
         Button verUsuarios = (Button) findViewById(R.id.buttonVerUsuarios);
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
@@ -69,7 +67,6 @@ public class Usuarios extends AppCompatActivity {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     try {
-                        idUsuario = snapshot.getValue().toString();
                         nombreBBDD = snapshot.child("nombres").getValue().toString();
                         ap1BBDD = snapshot.child("apellidos").getValue().toString();
                         ap2BBDD = snapshot.child("apellidos2").getValue().toString();

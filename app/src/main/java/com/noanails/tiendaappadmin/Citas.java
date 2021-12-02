@@ -27,7 +27,7 @@ import clasesObjeto.ListAdapterCitas;
 import clasesObjeto.ListElement_Citas;
 
 public class Citas extends AppCompatActivity {
-    private String servicioBBDD,fechaBBDD,horaBBDD,uId,id,idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario="";
+    private String servicioBBDD,fechaBBDD,horaBBDD,idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario="";
     ListAdapterCitas listAdapterCitas;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
@@ -40,7 +40,6 @@ public class Citas extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        id = mAuth.getUid();
         Button verCita = (Button) findViewById(R.id.buttonVerCitas);
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
@@ -76,13 +75,11 @@ public class Citas extends AppCompatActivity {
 
                         fechaBBDD = snapshot.child("fecha").getValue().toString();
                         horaBBDD = snapshot.child("hora").getValue().toString();
-                        uId = snapshot.child("uId").getValue().toString();
                         servicioBBDD = snapshot.child("servicio").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
                         nombreBBDD = snapshot.child("nombre").getValue().toString();
                         nTelfBBDD = snapshot.child("telefono").getValue().toString();
                         emailBBDD = snapshot.child("email").getValue().toString();
-                        idUsuario = snapshot.getKey();
                         idCita = snapshot.getKey();
 
                         insertElements();
@@ -101,7 +98,7 @@ public class Citas extends AppCompatActivity {
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
-        elements.add(new ListElement_Citas(servicioBBDD,fechaBBDD, horaBBDD, idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario));
+        elements.add(new ListElement_Citas(servicioBBDD,fechaBBDD, horaBBDD, idCita, nombreBBDD, nTelfBBDD, emailBBDD));
         listAdapterCitas = new ListAdapterCitas(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);

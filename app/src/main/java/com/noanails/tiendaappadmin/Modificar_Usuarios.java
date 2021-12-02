@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ public class Modificar_Usuarios extends AppCompatActivity {
     Bundle bundle;
     private Button btConfir, btVolver;
     private EditText etNombre, etAp1, etAp2, etTelf;
-    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,idRefTablaButton="";
+    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,idUsu, idRefTablaButton="";
     private TextView tvNombre, tvAp, tvTelf, tvEail;
     FirebaseAuth mmAuth;
     DatabaseReference mmDatabase;
@@ -49,6 +50,7 @@ public class Modificar_Usuarios extends AppCompatActivity {
         mmDatabase.child("Usuarios").child(idRefTablaButton).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                idUsu = snapshot.getKey();
                 nombreBBDD = snapshot.child("nombres").getValue().toString();
                 ap1BBDD = snapshot.child("apellidos").getValue().toString();
                 ap2BBDD = snapshot.child("apellidos2").getValue().toString();
@@ -59,24 +61,32 @@ public class Modificar_Usuarios extends AppCompatActivity {
                 tvTelf.setText(nTelfBBDD);
                 tvEail.setText(emailBBDD);
             }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
+                }
+            });
+
+        btConfir.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onClick(View v) {
+                nombre = etNombre.getText().toString();
+                ap1 = etAp1.getText().toString();
+                ap2 = etAp2.getText().toString();
+                nTelf = etTelf.getText().toString();
+                modificarDatosBBDD();
             }
         });
-
     }
 
     public void modificarDatosBBDD(){
-
         Map<String, Object> map = new HashMap<>();
         map.put("nombres", nombre);
         map.put("apellidos", ap1);
         map.put("apellidos2", ap2);
         map.put("n_telefonos", nTelf);
         map.put("emails", emailBBDD);
-        mmDatabase.child("Usuarios").child(mmAuth.getUid()).setValue(map);
+        mmDatabase.child("Usuarios").child(idRefTablaButton).setValue(map);
         startActivity(new Intent(Modificar_Usuarios.this, Usuarios.class));
         Toast.makeText(Modificar_Usuarios.this, "Se ha completado el cambio", Toast.LENGTH_LONG).show();
     }
