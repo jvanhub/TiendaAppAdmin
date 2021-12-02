@@ -74,7 +74,6 @@ public class Usuarios extends AppCompatActivity {
                         emailBBDD = snapshot.child("emails").getValue().toString();
                         idUsuario = snapshot.getKey();
                         insertElements();
-
                     } catch (NullPointerException n) {
                         Toast.makeText(Usuarios.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
                     }

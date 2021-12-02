@@ -37,10 +37,11 @@ public class Modificar_Usuarios extends AppCompatActivity {
         //Recibe datos (id del boton) desde ListaAdapter.java -> bindData.
         bundle = getIntent().getExtras();
         idRefTablaButton = bundle.getString("boton");
-
+        Toast.makeText(Modificar_Usuarios.this, idRefTablaButton, Toast.LENGTH_SHORT).show();
         mmAuth = FirebaseAuth.getInstance();
         mmDatabase = FirebaseDatabase.getInstance().getReference();
-
+        btConfir = findViewById(R.id.buttonModConfir);
+        btVolver = findViewById(R.id.buttonModVolver);
         etNombre = findViewById(R.id.editTextModNombre);
         etAp1 = findViewById(R.id.editTextModApe1);
         etAp2 = findViewById(R.id.editTextModApe2);
@@ -67,7 +68,6 @@ public class Modificar_Usuarios extends AppCompatActivity {
 
                 }
             });
-
         btConfir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +78,6 @@ public class Modificar_Usuarios extends AppCompatActivity {
                 email = etEmail.getText().toString();
 
                 if(nombre.isEmpty()||ap1.isEmpty()||ap2.isEmpty()||nTelf.isEmpty()){
-                    Toast.makeText(Modificar_Usuarios.this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
                 }else if(nTelf.length() <9 || nTelf.length() >9){
                     Toast.makeText(Modificar_Usuarios.this, "Número de telefono incorrecto", Toast.LENGTH_SHORT).show();
                 }else{
