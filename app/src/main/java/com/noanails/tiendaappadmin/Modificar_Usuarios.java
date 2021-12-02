@@ -74,7 +74,13 @@ public class Modificar_Usuarios extends AppCompatActivity {
                 ap1 = etAp1.getText().toString();
                 ap2 = etAp2.getText().toString();
                 nTelf = etTelf.getText().toString();
-                modificarDatosBBDD();
+                if(nombre.isEmpty()||ap1.isEmpty()||ap2.isEmpty()||nTelf.isEmpty()){
+                    Toast.makeText(Modificar_Usuarios.this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
+                }else if(nTelf.length() <9 || nTelf.length() >9){
+                    Toast.makeText(Modificar_Usuarios.this, "Número de telefono incorrecto", Toast.LENGTH_SHORT).show();
+                }else{
+                    modificarDatosBBDD();
+                }
             }
         });
     }
