@@ -79,13 +79,13 @@ public class Citas extends AppCompatActivity {
                         uId = snapshot.child("uId").getValue().toString();
                         servicioBBDD = snapshot.child("servicio").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
-                        idCita = snapshot.getKey();
                         nombreBBDD = snapshot.child("nombre").getValue().toString();
                         nTelfBBDD = snapshot.child("telefono").getValue().toString();
                         emailBBDD = snapshot.child("email").getValue().toString();
                         idUsuario = snapshot.getKey();
-                        insertElements();
+                        idCita = snapshot.getKey();
 
+                        insertElements();
                     }
                 }catch (NullPointerException n){
                     Toast.makeText(Citas.this, "No hay citas pendientes", Toast.LENGTH_SHORT).show();

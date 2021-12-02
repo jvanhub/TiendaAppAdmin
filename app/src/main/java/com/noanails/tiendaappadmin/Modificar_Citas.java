@@ -201,6 +201,10 @@ public class Modificar_Citas extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 servicioBBDD = snapshot.child("servicio").getValue().toString();
+                nombreBBDD = snapshot.child("nombre").getValue().toString();
+                nTelfBBDD = snapshot.child("telefono").getValue().toString();
+                emailBBDD = snapshot.child("email").getValue().toString();
+
                 Calendar calendario = Calendar.getInstance();
                 int dia = calendario.get(Calendar.DAY_OF_MONTH);
                 int mes = (calendario.get(Calendar.MONTH) + 1);
