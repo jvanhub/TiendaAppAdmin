@@ -24,9 +24,8 @@ import java.util.Map;
 public class Modificar_Usuarios extends AppCompatActivity {
     Bundle bundle;
     private Button btConfir, btVolver;
-    private EditText etNombre, etAp1, etAp2, etTelf;
-    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,idUsu, idRefTablaButton="";
-    private TextView tvNombre, tvAp, tvTelf, tvEail;
+    private EditText etNombre, etAp1, etAp2, etTelf, etEmail;
+    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,email,idUsu, idRefTablaButton="";
     FirebaseAuth mmAuth;
     DatabaseReference mmDatabase;
 
@@ -42,24 +41,26 @@ public class Modificar_Usuarios extends AppCompatActivity {
         mmAuth = FirebaseAuth.getInstance();
         mmDatabase = FirebaseDatabase.getInstance().getReference();
 
-        tvNombre = findViewById(R.id.editTextModNombre);
-        tvAp = findViewById(R.id.editTextModApe1);
-        tvTelf = findViewById(R.id.editTextModApe2);
-        tvEail = findViewById(R.id.editTextModPhone);
+        etNombre = findViewById(R.id.editTextModNombre);
+        etAp1 = findViewById(R.id.editTextModApe1);
+        etAp2 = findViewById(R.id.editTextModApe2);
+        etTelf = findViewById(R.id.editTextModPhone);
+        etEmail = findViewById(R.id.editTextModEmail);
 
         mmDatabase.child("Usuarios").child(idRefTablaButton).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                idUsu = snapshot.getKey();
+                idRefTablaButton = snapshot.getKey();
                 nombreBBDD = snapshot.child("nombres").getValue().toString();
                 ap1BBDD = snapshot.child("apellidos").getValue().toString();
                 ap2BBDD = snapshot.child("apellidos2").getValue().toString();
                 nTelfBBDD = snapshot.child("n_telefonos").getValue().toString();
                 emailBBDD = snapshot.child("emails").getValue().toString();
-                tvNombre.setText(nombreBBDD);
-                tvAp.setText(ap1BBDD +" "+ap2BBDD);
-                tvTelf.setText(nTelfBBDD);
-                tvEail.setText(emailBBDD);
+                etNombre.setText(nombreBBDD);
+                etAp1.setText(ap1BBDD);
+                etAp2.setText(ap2BBDD);
+                etTelf.setText(nTelfBBDD);
+                etEmail.setText(emailBBDD);
             }
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
@@ -74,6 +75,8 @@ public class Modificar_Usuarios extends AppCompatActivity {
                 ap1 = etAp1.getText().toString();
                 ap2 = etAp2.getText().toString();
                 nTelf = etTelf.getText().toString();
+                email = etEmail.getText().toString();
+
                 if(nombre.isEmpty()||ap1.isEmpty()||ap2.isEmpty()||nTelf.isEmpty()){
                     Toast.makeText(Modificar_Usuarios.this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
                 }else if(nTelf.length() <9 || nTelf.length() >9){

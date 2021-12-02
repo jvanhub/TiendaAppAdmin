@@ -103,6 +103,22 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="17dp" />
+
+            <EditText
+                android:id="@+id/editTextModEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/txtvw"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="@string/email"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:textStyle="italic"
+                android:importantForAutofill="no" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="17dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
