@@ -22,14 +22,13 @@ import java.util.Map;
 
 public class Modificar_Usuarios extends AppCompatActivity {
     Bundle bundle;
-    private String idRefTablaButton;
     private Button btConfir, btVolver;
     private EditText etNombre, etAp1, etAp2, etTelf;
+    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,idRefTablaButton="";
+    private TextView tvNombre, tvAp, tvTelf, tvEail;
     FirebaseAuth mmAuth;
     DatabaseReference mmDatabase;
-    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD;
-    private TextView tvNombre, tvAp, tvTelf, tvEail;
-    private String nombre, ap1, ap2, nTelf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

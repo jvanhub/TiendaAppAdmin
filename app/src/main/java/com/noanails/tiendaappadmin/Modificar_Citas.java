@@ -33,19 +33,9 @@ public class Modificar_Citas extends AppCompatActivity {
 
     private RadioButton hora9, hora10, hora11, hora12, hora15, hora16, hora17, hora18, hora19;
     private RadioGroup rg;
-    private Button confirmar;
-    private Button fecha;
-    private String fechaCompletaTv = "";
-    private String horaCita = "";
-    private String fechaBBDD = "";
-    private String horaBBDD = "";
-    private String id;
-    private String servicioBBDD="";
-    private String idRefTablaButton;
+    private Button confirmar,fecha,volver;
+    private String fechaCompletaTv,horaCita,fechaBBDD,horaBBDD,id,servicioBBDD,idRefTablaButton,textHint,nombreBBDD,nTelfBBDD,emailBBDD,idUsuario="";
     int radioId;
-    private Button volver;
-    private String textHint="";
-
     RadioButton selectedbutton;
     Bundle bundle;
     ArrayList<RadioButton> arrayRadioButtons = new ArrayList<>();
@@ -227,6 +217,9 @@ public class Modificar_Citas extends AppCompatActivity {
                     map.put("fecha", fechaCompletaTv);
                     map.put("hora", horaCita);
                     map.put("uId", id);
+                    map.put("nombre", nombreBBDD);
+                    map.put("telefono", nTelfBBDD);
+                    map.put("email", emailBBDD);
                     mDatabase.child("Reservas").child(idRefTablaButton).setValue(map);
                     startActivity(new Intent(Modificar_Citas.this, Citas.class));
                 }

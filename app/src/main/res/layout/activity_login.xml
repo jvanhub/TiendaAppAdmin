@@ -98,10 +98,8 @@
                 android:layout_width="134dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
-                android:backgroundTint="#80114A"
+                android:backgroundTint="#69696A"
                 android:fontFamily="serif"
-
                 android:text="@string/entrar"
                 android:textAllCaps="false"
                 android:textSize="18sp"
@@ -117,10 +115,8 @@
                 android:layout_width="134dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
-                android:backgroundTint="#80114A"
+                android:backgroundTint="#69696A"
                 android:fontFamily="serif"
-
                 android:text="@string/registrar"
                 android:textAllCaps="false"
                 android:textSize="18sp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/imgnail"
+    android:background="@drawable/dg_color"
     android:orientation="vertical"
     tools:context=".Modificar_Citas">
 
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#80114A"
+                android:backgroundTint="#69696A"
                 android:fontFamily="serif"
                 android:text="@string/fechaBt"
                 android:textAllCaps="false"
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#80114A"
+                android:backgroundTint="#242425"
                 android:fontFamily="serif"
                 android:text="@string/hora"
                 android:textAlignment="center"
@@ -161,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="#80114A"
+                    android:backgroundTint="#242425"
                     android:text="@string/confirmar"
                     android:textAllCaps="false"
                     app:cornerRadius="10dp" />
@@ -176,10 +176,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#80114A"
+                    android:backgroundTint="#242425"
                     android:text="@string/volver"
                     android:textAllCaps="false"
                     app:cornerRadius="10dp" />
+
             </LinearLayout>
 
         </LinearLayout>

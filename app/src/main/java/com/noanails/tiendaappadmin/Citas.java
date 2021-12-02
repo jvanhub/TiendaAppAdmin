@@ -49,7 +49,6 @@ public class Citas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 recogerCitas();
-                recogerUsuarios();
             }
         });
 
@@ -81,9 +80,12 @@ public class Citas extends AppCompatActivity {
                         servicioBBDD = snapshot.child("servicio").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
                         idCita = snapshot.getKey();
-                        if(((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)){
-                            insertElements();
-                        }
+                        nombreBBDD = snapshot.child("nombre").getValue().toString();
+                        nTelfBBDD = snapshot.child("telefono").getValue().toString();
+                        emailBBDD = snapshot.child("email").getValue().toString();
+                        idUsuario = snapshot.getKey();
+                        insertElements();
+
                     }
                 }catch (NullPointerException n){
                     Toast.makeText(Citas.this, "No hay citas pendientes", Toast.LENGTH_SHORT).show();
@@ -93,31 +95,6 @@ public class Citas extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(Citas.this, "Error BBDD", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-    public void recogerUsuarios() {
-        mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                elements.clear();
-
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    try {
-                        nombreBBDD = snapshot.child("nombres").getValue().toString();
-                        nTelfBBDD = snapshot.child("n_telefonos").getValue().toString();
-                        emailBBDD = snapshot.child("emails").getValue().toString();
-                        insertElements();
-
-                    } catch (NullPointerException n) {
-                        Toast.makeText(Citas.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Citas.this, "Error BBDD", Toast.LENGTH_SHORT).show();
             }
         });
     }

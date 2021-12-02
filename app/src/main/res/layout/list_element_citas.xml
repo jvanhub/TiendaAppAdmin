@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#80114A"
+                android:backgroundTint="#69696A"
                 android:text="@string/modificarCita"
                 android:textAllCaps="false"
                 app:cornerRadius="10dp"/>
@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#80114A"
+                android:backgroundTint="#69696A"
                 android:text="@string/eliminarCita"
                 android:textAllCaps="false"
                 app:cornerRadius="10dp" />

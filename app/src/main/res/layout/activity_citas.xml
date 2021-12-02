@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dg_color"
     tools:context=".Citas">
     <ScrollView
         android:layout_width="0dp"
@@ -28,10 +29,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="27dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -39,24 +36,27 @@
 
                 <Button
                     android:id="@+id/buttonVerCitas"
-                    android:layout_width="match_parent"
+                    android:layout_width="135dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#80114A"
+                    android:backgroundTint="#69696A"
                     android:text="@string/VerCita"
+                    android:textAllCaps="false"
+                    app:cornerRadius="10dp" />
+                <Space
+                    android:layout_width="73dp"
+                    android:layout_height="match_parent" />
+                <Button
+                    android:id="@+id/buttonVolver2"
+                    android:layout_width="149dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#69696A"
+                    android:text="@string/volver"
                     android:textAllCaps="false"
                     app:cornerRadius="10dp" />
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/buttonVolver2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#80114A"
-                android:text="@string/volver"
-                android:textAllCaps="false"
-                app:cornerRadius="10dp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
