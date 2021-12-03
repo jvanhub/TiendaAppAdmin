@@ -22,12 +22,10 @@
     <string name="fechaBt">*PULSE AQUÍ PARA SELECCIONAR FECHA*</string>
 
     <string name="Usuarios">Usuarios</string>
-    <string name="VerCitaActual">Citas actuales</string>
-    VerCita
-    <string name="VerCita">Cargar citas</string>
+    <string name="VerCita">CARGAR CITAS</string>
 
-    <string name="modificarCita">Modificar</string>
-    <string name="eliminarCita">Eliminar</string>
+    <string name="modificarCita">MODIFICAR</string>
+    <string name="eliminarCita">ELIMINAR</string>
 
     <string name="apeUsu">Primer apellido:</string>
     <string name="ape2Usu">Segundo apellido:</string>
@@ -35,7 +33,7 @@
     <string name="telfUsu">Teléfono:</string>
     <string name="usuarioCard">Usuario.</string>
     <string name="nombreUsu">Nombre:</string>
-    <string name="volver">Volver</string>
+    <string name="volver">VOLVER</string>
 
     <string name="img1">Imagen principal</string>
     <string name="resPass">¿Has olvidado la contraseña?</string>
