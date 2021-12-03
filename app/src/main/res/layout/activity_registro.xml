@@ -166,7 +166,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
 
-                    android:backgroundTint="#69696A"
+                    android:backgroundTint="#030D3C"
                     android:gravity="center"
                     android:text="@string/confirmar"
                     android:textAllCaps="false"

@@ -22,7 +22,7 @@
             android:id="@+id/button_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#69696A"
+            android:backgroundTint="#030D3C"
             android:text="@string/perfil"
             app:cornerRadius="10dp" />
 
@@ -34,7 +34,7 @@
             android:id="@+id/button_pedir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#69696A"
+            android:backgroundTint="#030D3C"
             android:text="@string/usuario"
             app:cornerRadius="10dp"
             tools:ignore="TextContrastCheck" />
@@ -47,7 +47,7 @@
             android:id="@+id/button_ver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#69696A"
+            android:backgroundTint="#030D3C"
             android:text="@string/citas"
             app:cornerRadius="10dp" />
 
@@ -59,7 +59,7 @@
             android:id="@+id/buttonCerrarSession"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#69696A"
+            android:backgroundTint="#030D3C"
             android:text="@string/cerrar_sesion"
             app:cornerRadius="10dp" />
 
