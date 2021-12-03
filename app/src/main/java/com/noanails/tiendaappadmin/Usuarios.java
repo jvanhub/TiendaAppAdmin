@@ -39,17 +39,9 @@ public class Usuarios extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        Button verUsuarios = (Button) findViewById(R.id.buttonVerUsuarios);
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
-
-        verUsuarios.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recogerUsuarios();
-            }
-        });
-
+        recogerUsuarios();
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

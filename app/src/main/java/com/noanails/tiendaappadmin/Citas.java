@@ -45,6 +45,9 @@ public class Citas extends AppCompatActivity {
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
 
+        recogerCitas();
+        recogerUsuarios();
+
         verCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

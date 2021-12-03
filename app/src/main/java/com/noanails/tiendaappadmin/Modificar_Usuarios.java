@@ -84,6 +84,12 @@ public class Modificar_Usuarios extends AppCompatActivity {
                 }
             }
         });
+        btVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Modificar_Usuarios.this, Usuarios.class));
+            }
+        });
     }
 
     public void modificarDatosBBDD(){

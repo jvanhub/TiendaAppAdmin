@@ -14,6 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/rosaFondo</item>
+        <item name="colorAccent">#5E85E7</item>
     </style>
 </resources>
