@@ -36,7 +36,7 @@ public class Modificar_Usuarios extends AppCompatActivity {
         //Recibe datos (id del boton) desde ListaAdapter.java -> bindData.
         bundle = getIntent().getExtras();
         idRefTablaButton = bundle.getString("boton");
-        Toast.makeText(Modificar_Usuarios.this, idRefTablaButton, Toast.LENGTH_SHORT).show();
+
         mmAuth = FirebaseAuth.getInstance();
         mmDatabase = FirebaseDatabase.getInstance().getReference();
         btConfir = findViewById(R.id.buttonModConfir);

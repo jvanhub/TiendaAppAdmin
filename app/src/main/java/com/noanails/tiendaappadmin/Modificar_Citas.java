@@ -132,7 +132,7 @@ public class Modificar_Citas extends AppCompatActivity {
             }
         }
                 , anyo, mes, dia);
-        datePikerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FAB5B5")));
+        datePikerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#030D3C")));
 
         //Fecha mínima, para evitar citas de dias anteriores al actual.
         datePikerDialog.getDatePicker().setMinDate(System.currentTimeMillis());

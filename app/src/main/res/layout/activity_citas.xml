@@ -39,7 +39,7 @@
                     android:layout_width="135dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#69696A"
+                    android:backgroundTint="#030D3C"
                     android:text="@string/VerCita"
                     android:textAllCaps="false"
                     app:cornerRadius="10dp" />
@@ -50,7 +50,7 @@
                     android:id="@+id/buttonVolver2"
                     android:layout_width="149dp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#69696A"
+                    android:backgroundTint="#030D3C"
                     android:text="@string/volver"
                     android:textAllCaps="false"
                     app:cornerRadius="10dp" />
