@@ -22,7 +22,7 @@
     <string name="fechaBt">*PULSE AQUÍ PARA SELECCIONAR FECHA*</string>
 
     <string name="Usuarios">Usuarios</string>
-    <string name="VerCita">CARGAR CITAS</string>
+    <string name="VerCita">RECARGAR</string>
 
     <string name="modificarCita">MODIFICAR</string>
     <string name="eliminarCita">ELIMINAR</string>

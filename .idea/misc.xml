@@ -6,13 +6,23 @@
         <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/drawable/ic_secondname.xml" value="0.2703125" />
         <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/activity_administracion.xml" value="0.24010416666666667" />
         <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/activity_modificar_usuarios.xml" value="0.264" />
         <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/activity_registro.xml" value="0.25416666666666665" />
         <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/activity_splash_screen.xml" value="0.13020833333333334" />
         <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/activity_splash_screen_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/list_element_citas.xml" value="0.25416666666666665" />
-        <entry key="..\:/Mis Documentos HD/Cursos _Programacion/DAMOnline/2021/Proyecto/APP/TiendaAppAdmin/app/src/main/res/layout/list_element_usuarios.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/drawable/btns.xml" value="0.2890625" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/drawable/dg_color.xml" value="0.2890625" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/drawable/ic_email.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/drawable/txtvw.xml" value="0.2890625" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_administracion.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_citas.xml" value="0.33" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_list_adapter_citas.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_modificar_citas.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_modificar_usuarios.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_registro.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_splash_screen.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/activity_usuarios.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/list_element_citas.xml" value="0.33" />
         <entry key="..\:/Users/i.mantecon/Documents/TiendaAppAdmin/app/src/main/res/layout/list_element_usuarios.xml" value="0.27291666666666664" />
       </map>
     </option>
