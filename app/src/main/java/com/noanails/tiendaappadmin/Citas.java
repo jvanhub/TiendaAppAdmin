@@ -46,13 +46,13 @@ public class Citas extends AppCompatActivity {
         elements = new ArrayList<>();
 
         recogerCitas();
-        recogerUsuarios();
+        //recogerUsuarios();
 
         verCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recogerCitas();
-                recogerUsuarios();
+                //recogerUsuarios();
             }
         });
 
@@ -82,11 +82,13 @@ public class Citas extends AppCompatActivity {
                         horaBBDD = snapshot.child("hora").getValue().toString();
                         uId = snapshot.child("uId").getValue().toString();
                         servicioBBDD = snapshot.child("servicio").getValue().toString();
+
+                        nombreBBDD = snapshot.child("nombre").getValue().toString();
+                        nTelfBBDD = snapshot.child("telefono").getValue().toString();
+                        emailBBDD = snapshot.child("email").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
                         idCita = snapshot.getKey();
-                        if(((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)){
-                            insertElements();
-                        }
+                        insertElements();
                     }
                 }catch (NullPointerException n){
                     Toast.makeText(Citas.this, "No hay citas pendientes", Toast.LENGTH_SHORT).show();
@@ -99,7 +101,7 @@ public class Citas extends AppCompatActivity {
             }
         });
     }
-    public void recogerUsuarios() {
+    /*public void recogerUsuarios() {
         mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -123,7 +125,7 @@ public class Citas extends AppCompatActivity {
                 Toast.makeText(Citas.this, "Error BBDD", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
