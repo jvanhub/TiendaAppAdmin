@@ -44,15 +44,11 @@ public class Citas extends AppCompatActivity {
         Button verCita = (Button) findViewById(R.id.buttonVerCitas);
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
-
         recogerCitas();
-        //recogerUsuarios();
-
         verCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recogerCitas();
-                //recogerUsuarios();
             }
         });
 
@@ -82,7 +78,6 @@ public class Citas extends AppCompatActivity {
                         horaBBDD = snapshot.child("hora").getValue().toString();
                         uId = snapshot.child("uId").getValue().toString();
                         servicioBBDD = snapshot.child("servicio").getValue().toString();
-
                         nombreBBDD = snapshot.child("nombre").getValue().toString();
                         nTelfBBDD = snapshot.child("telefono").getValue().toString();
                         emailBBDD = snapshot.child("email").getValue().toString();
@@ -101,31 +96,6 @@ public class Citas extends AppCompatActivity {
             }
         });
     }
-    /*public void recogerUsuarios() {
-        mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                elements.clear();
-
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    try {
-                        nombreBBDD = snapshot.child("nombres").getValue().toString();
-                        nTelfBBDD = snapshot.child("n_telefonos").getValue().toString();
-                        emailBBDD = snapshot.child("emails").getValue().toString();
-                        insertElements();
-
-                    } catch (NullPointerException n) {
-                        Toast.makeText(Citas.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Citas.this, "Error BBDD", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
 
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
