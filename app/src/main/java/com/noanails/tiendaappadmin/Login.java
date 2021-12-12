@@ -38,7 +38,6 @@ public class Login extends AppCompatActivity {
         et_email = (EditText) findViewById(R.id.editTextEmail1);
         et_pass = (EditText) findViewById(R.id.editTextTextPass);
         Button entrar = (Button) findViewById(R.id.buttonEntrar);
-        Button registro = (Button) findViewById(R.id.buttonRegistro);
         resPass = (TextView) findViewById(R.id.textViewResPass);
 
         resPass.setOnClickListener(new View.OnClickListener() {
@@ -65,13 +64,6 @@ public class Login extends AppCompatActivity {
                 } else {
                     login();
                 }
-            }
-        });
-
-        registro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this, Registro.class));
             }
         });
     }

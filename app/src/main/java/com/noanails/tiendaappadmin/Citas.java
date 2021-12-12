@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,8 +27,9 @@ import java.util.List;
 import clasesObjeto.ListAdapterCitas;
 import clasesObjeto.ListElement_Citas;
 
-public class Citas extends AppCompatActivity {
+public class Citas extends AppCompatActivity implements androidx.appcompat.widget.SearchView.OnQueryTextListener, SearchView.OnQueryTextListener {
     private String servicioBBDD,fechaBBDD,horaBBDD,uId,id,idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario="";
+    private SearchView sv;
     ListAdapterCitas listAdapterCitas;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
@@ -38,6 +40,7 @@ public class Citas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
 
+        sv = findViewById(R.id.SearchView);
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         id = mAuth.getUid();
@@ -45,6 +48,7 @@ public class Citas extends AppCompatActivity {
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
         recogerCitas();
+        initListener();
         verCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,8 +62,12 @@ public class Citas extends AppCompatActivity {
                 startActivity(new Intent(Citas.this, Administracion.class));
             }
         });
-    }
 
+
+    }
+    private void initListener(){
+        sv.setOnQueryTextListener(Citas.this);
+    }
     //Metodo para recoger todas las fechas desde el día de hoy incuido, las fechas pasadas no.
     public void recogerCitas() {
         mDatabase.child("Reservas").addValueEventListener(new ValueEventListener() {
@@ -96,7 +104,6 @@ public class Citas extends AppCompatActivity {
             }
         });
     }
-
     //Método encargado de crear e introducir los datos en cada elemento.
     public void insertElements() {
         elements.add(new ListElement_Citas(servicioBBDD,fechaBBDD, horaBBDD, idCita, nombreBBDD, nTelfBBDD, emailBBDD));
@@ -105,5 +112,21 @@ public class Citas extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(listAdapterCitas);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        listAdapterCitas.filter(newText);
+        return false;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

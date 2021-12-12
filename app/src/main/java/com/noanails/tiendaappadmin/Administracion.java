@@ -22,7 +22,6 @@ public class Administracion extends AppCompatActivity {
         Button pedir_cita = (Button) findViewById(R.id.button_pedir);
         Button ver_cita = (Button) findViewById(R.id.button_ver);
         Button cerrar_sesion = (Button) findViewById(R.id.buttonCerrarSession);
-        Button perfil = (Button) findViewById(R.id.button_perfil);
 
         pedir_cita.setOnClickListener(v -> startActivity(new Intent(Administracion.this, Usuarios.class)));
 

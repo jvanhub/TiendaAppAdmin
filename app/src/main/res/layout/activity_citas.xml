@@ -24,6 +24,11 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <SearchView
+                android:id="@+id/SearchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listRecyclerView"
                 android:layout_width="wrap_content"

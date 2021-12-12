@@ -2,6 +2,7 @@ package clasesObjeto;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,16 @@ import com.noanails.tiendaappadmin.Citas;
 import com.noanails.tiendaappadmin.Modificar_Citas;
 import com.noanails.tiendaappadmin.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 //Esta clase relaciona la parte grafica con los datos (Fecha y Hora) que vamos ha tratar.
 public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.ViewHolder> {
 
     private List<ListElement_Citas>mData;//Esta lista tiene todos los datos de ListElement.
+    private List<ListElement_Citas>originalItems;//Esta lista tiene todos los datos de ListElement Originales.
     private LayoutInflater mInflater;//Describe de que archivo proviene.
     public Context context;//Define de que clase estamos llamando este adaptador.
 
@@ -32,6 +37,8 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
         this.mInflater = LayoutInflater.from(context);
         this.context=context;
         this.mData = itemList;
+        this.originalItems = new ArrayList<>();
+        originalItems.addAll(mData);
     }
     public ListAdapterCitas(){
     }
@@ -54,6 +61,29 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
     @Override
     public int getItemCount() {
         return mData.size();
+    }
+
+    public void filter(String sv){
+        if(sv.length() == 0){
+            mData.clear();
+            mData.addAll(originalItems);
+        }else{
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                mData.clear();
+                List<ListElement_Citas> collect = originalItems.stream()
+                        .filter(m -> m.getEmail().toLowerCase().contains(sv))
+                        .collect(Collectors.toList());
+
+                mData.addAll(collect);
+            }else{
+                for (ListElement_Citas m:originalItems){
+                    if(m.getEmail().toLowerCase().contains(sv)){
+                        mData.add(m);
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     //Este metodo sirve para redefinir los elementos de la lista.

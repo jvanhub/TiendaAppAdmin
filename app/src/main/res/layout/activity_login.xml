@@ -105,23 +105,6 @@
                 android:textSize="18sp"
                 app:cornerRadius="10dp" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="43dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/buttonRegistro"
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#030D3C"
-                android:fontFamily="serif"
-                android:text="@string/registrar"
-                android:textAllCaps="false"
-                android:textSize="18sp"
-                app:cornerRadius="10dp" />
-
         </LinearLayout>
 
     </LinearLayout>
