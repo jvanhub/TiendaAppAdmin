@@ -27,7 +27,7 @@ import java.util.List;
 import clasesObjeto.ListAdapterCitas;
 import clasesObjeto.ListElement_Citas;
 
-public class Citas extends AppCompatActivity implements androidx.appcompat.widget.SearchView.OnQueryTextListener, SearchView.OnQueryTextListener {
+public class Citas extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private String servicioBBDD,fechaBBDD,horaBBDD,uId,id,idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario="";
     private SearchView sv;
     ListAdapterCitas listAdapterCitas;
@@ -65,9 +65,11 @@ public class Citas extends AppCompatActivity implements androidx.appcompat.widge
 
 
     }
+    //
     private void initListener(){
         sv.setOnQueryTextListener(Citas.this);
     }
+
     //Metodo para recoger todas las fechas desde el día de hoy incuido, las fechas pasadas no.
     public void recogerCitas() {
         mDatabase.child("Reservas").addValueEventListener(new ValueEventListener() {
