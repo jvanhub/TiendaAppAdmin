@@ -27,7 +27,13 @@
             <SearchView
                 android:id="@+id/SearchView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="#C1E6E3"
+                />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listRecyclerView"

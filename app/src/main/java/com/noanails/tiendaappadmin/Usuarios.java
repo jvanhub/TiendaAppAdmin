@@ -28,10 +28,9 @@ import clasesObjeto.ListAdapterCitas;
 import clasesObjeto.ListAdapterUsuarios;
 import clasesObjeto.ListElement_Usuarios;
 
-public class Usuarios extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class Usuarios extends AppCompatActivity {
 
     private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
-    private SearchView svu;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
     ListAdapterUsuarios listAdapterUsuarios;
@@ -42,14 +41,13 @@ public class Usuarios extends AppCompatActivity implements SearchView.OnQueryTex
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
 
-        svu = findViewById(R.id.SearchViewUsu);
+
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
 
         recogerUsuarios();
-        initListener();
 
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +57,6 @@ public class Usuarios extends AppCompatActivity implements SearchView.OnQueryTex
         });
     }
 
-    private void initListener(){
-        svu.setOnQueryTextListener(Usuarios.this);
-    }
 
     //Se encarga de recoger, comparar e insertar los datos junto con los elementos.
     public void recogerUsuarios() {
@@ -100,16 +95,5 @@ public class Usuarios extends AppCompatActivity implements SearchView.OnQueryTex
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(listAdapterUsuarios);
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        //listAdapterUsuarios.filter(newText);
-        return false;
     }
 }

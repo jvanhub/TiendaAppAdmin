@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
     //Variables de recogida de datos.
     private String email = "";
     private String pass = "";
-
+    private String emailAutorizado= "x.proof.delta@gmail.com";
     //Instancia de la clase FirebaseAuth.
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
@@ -62,7 +62,11 @@ public class Login extends AppCompatActivity {
                 if (email.isEmpty() || pass.isEmpty()) {
                     Toast.makeText(Login.this, "Completa los campos", Toast.LENGTH_LONG).show();
                 } else {
-                    login();
+                    if(email.equals(emailAutorizado)){
+                        login();
+                    }else{
+                        Toast.makeText(Login.this, "Introduzca un email válido.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });

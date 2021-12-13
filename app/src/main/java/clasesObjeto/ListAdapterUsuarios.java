@@ -72,8 +72,8 @@ public class ListAdapterUsuarios extends RecyclerView.Adapter<ListAdapterUsuario
             nombre = itemView.findViewById(R.id.textViewNombre);
             ap1 = itemView.findViewById(R.id.textViewApe1);
             ap2 = itemView.findViewById(R.id.textViewApe2);
-            nTelf = itemView.findViewById(R.id.textViewEmail);
-            email = itemView.findViewById(R.id.textViewTelf);
+            nTelf = itemView.findViewById(R.id.textViewTelf);
+            email = itemView.findViewById(R.id.textViewEmail);
 
             btMod = itemView.findViewById(R.id.buttonModifi);
             btElim = itemView.findViewById(R.id.buttonDelet);
