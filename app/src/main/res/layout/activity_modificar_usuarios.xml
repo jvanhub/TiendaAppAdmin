@@ -110,12 +110,13 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/txtvw"
                 android:ems="10"
+                android:enabled="false"
                 android:fontFamily="serif"
                 android:hint="@string/email"
+                android:importantForAutofill="no"
                 android:inputType="phone"
                 android:minHeight="48dp"
-                android:textStyle="italic"
-                android:importantForAutofill="no" />
+                android:textStyle="italic" />
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="17dp" />
