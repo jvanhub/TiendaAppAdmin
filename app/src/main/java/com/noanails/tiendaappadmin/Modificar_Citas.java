@@ -197,6 +197,7 @@ public class Modificar_Citas extends AppCompatActivity {
 
     //Método que modifica los campos en la base de datos.
     public void modificador() {
+
         mDatabase.child("Reservas").child(idRefTablaButton).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -204,12 +205,12 @@ public class Modificar_Citas extends AppCompatActivity {
                 nombreBBDD = snapshot.child("nombre").getValue().toString();
                 nTelfBBDD = snapshot.child("telefono").getValue().toString();
                 emailBBDD = snapshot.child("email").getValue().toString();
+                id = snapshot.child("uId").getValue().toString();
 
                 Calendar calendario = Calendar.getInstance();
                 int dia = calendario.get(Calendar.DAY_OF_MONTH);
                 int mes = (calendario.get(Calendar.MONTH) + 1);
                 int anyo = calendario.get(Calendar.YEAR);
-                id = mAuth.getUid();
                 String extractFecha[] = fechaBBDD.split("/");
                 if (Integer.parseInt(extractFecha[2]) - anyo < 0) {
                 } else if (Integer.parseInt(extractFecha[1]) - mes < 0) {

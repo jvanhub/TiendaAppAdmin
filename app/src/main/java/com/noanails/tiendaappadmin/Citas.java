@@ -93,7 +93,10 @@ public class Citas extends AppCompatActivity implements SearchView.OnQueryTextLi
                         emailBBDD = snapshot.child("email").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
                         idCita = snapshot.getKey();
-                        insertElements();
+                        if(((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)){
+                            insertElements();
+                        }
+
                     }
                 }catch (NullPointerException n){
                     Toast.makeText(Citas.this, "No hay citas pendientes", Toast.LENGTH_SHORT).show();
