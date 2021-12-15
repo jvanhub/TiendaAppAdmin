@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="12dp">
@@ -112,7 +113,8 @@
                 android:backgroundTint="#030D3C"
                 android:text="@string/modificarCita"
                 android:textAllCaps="false"
-                app:cornerRadius="10dp"/>
+                app:cornerRadius="10dp"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/buttonDelet"
@@ -122,7 +124,8 @@
                 android:backgroundTint="#030D3C"
                 android:text="@string/eliminarCita"
                 android:textAllCaps="false"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
     </LinearLayout>

@@ -164,7 +164,8 @@
                     android:backgroundTint="#030D3C"
                     android:text="@string/confirmar"
                     android:textAllCaps="false"
-                    app:cornerRadius="10dp" />
+                    app:cornerRadius="10dp"
+                    tools:ignore="NestedWeights" />
 
                 <Space
                     android:layout_width="wrap_content"

@@ -71,11 +71,8 @@
 
     <!-- Fregment -->
     <string name="nombrePerfil">Nombre:</string>
-    <string name="nombrePerfil2"></string>
     <string name="apellidosPerfil">Apellidos:</string>
-    <string name="apellidosPerfil2"></string>
     <string name="telefonoPerfil">Teléfono: </string>
-    <string name="telefonoPerfil2"></string>
     <string name="emailPerfil">Email:</string>
 
     <string name="mostrarFechaCard">dd/mm/yyyy</string>
@@ -96,6 +93,7 @@
     <string name="editPerfEmail"><u>EMAIL</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo">Loggo</string>
 
 
 </resources>

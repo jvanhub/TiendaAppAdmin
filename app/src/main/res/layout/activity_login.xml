@@ -29,7 +29,8 @@
             android:layout_width="229dp"
             android:layout_height="241dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="@string/logo" />
 
         <Space
             android:layout_width="match_parent"
@@ -77,7 +78,7 @@
         <TextView
             android:id="@+id/textViewResPass"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/resPass"
             android:textAlignment="textEnd"
@@ -95,7 +96,7 @@
 
             <Button
                 android:id="@+id/buttonEntrar"
-                android:layout_width="134dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#030D3C"
