@@ -1,0 +1,177 @@
+@startuml
+
+title __TIENDAAPPADMIN's Class Diagram__\n
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.Administracion {
+        - mAuth : FirebaseAuth
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.Citas {
+        ~ elements : List<ListElement_Citas>
+        ~ mAuth : FirebaseUser
+        ~ mDatabase : DatabaseReference
+        - emailBBDD : String
+        - fechaBBDD : String
+        - horaBBDD : String
+        - id : String
+        - idCita : String
+        - idUsuario : String
+        - nTelfBBDD : String
+        - nombreBBDD : String
+        - servicio : String
+        - servicioBBDD : String
+        - sv : SearchView
+        - uId : String
+        + insertElements()
+        + onPointerCaptureChanged()
+        + onQueryTextChange()
+        + onQueryTextSubmit()
+        + recogerCitas()
+        # onCreate()
+        - initListener()
+    }
+  }
+  
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.Login {
+        - email : String
+        - emailAutorizado : String
+        - et_email : EditText
+        - et_pass : EditText
+        - mAuth : FirebaseAuth
+        - mUser : FirebaseUser
+        - pass : String
+        - resPass : TextView
+        + login()
+        + resPass()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.Modificar_Citas {
+        ~ arrayRadioButtons : ArrayList<RadioButton>
+        ~ bundle : Bundle
+        ~ mAuth : FirebaseAuth
+        ~ mDatabase : DatabaseReference
+        ~ radioId : int
+        ~ selectedbutton : RadioButton
+        - confirmar : Button
+        - emailBBDD : String
+        - fecha : Button
+        - fechaBBDD : String
+        - fechaCompletaTv : String
+        - hora10 : RadioButton
+        - hora11 : RadioButton
+        - hora12 : RadioButton
+        - hora15 : RadioButton
+        - hora16 : RadioButton
+        - hora17 : RadioButton
+        - hora18 : RadioButton
+        - hora19 : RadioButton
+        - hora9 : RadioButton
+        - horaBBDD : String
+        - horaCita : String
+        - id : String
+        - idRefTablaButton : String
+        - idUsuario : String
+        - nTelfBBDD : String
+        - nombreBBDD : String
+        - rg : RadioGroup
+        - servicioBBDD : String
+        - textHint : String
+        - volver : Button
+        + calendarDate()
+        + comparador()
+        + extraerValores()
+        + modificador()
+        + retornarEstado()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.Modificar_Usuarios {
+        ~ bundle : Bundle
+        ~ mmAuth : FirebaseAuth
+        ~ mmDatabase : DatabaseReference
+        - ap1 : String
+        - ap1BBDD : String
+        - ap2 : String
+        - ap2BBDD : String
+        - btConfir : Button
+        - btVolver : Button
+        - email : String
+        - emailBBDD : String
+        - etAp1 : EditText
+        - etAp2 : EditText
+        - etEmail : EditText
+        - etNombre : EditText
+        - etTelf : EditText
+        - idRefTablaButton : String
+        - idUsu : String
+        - nTelf : String
+        - nTelfBBDD : String
+        - nombre : String
+        - nombreBBDD : String
+        + modificarDatosBBDD()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.SplashScreenMain {
+        - mAuth : FirebaseAuth
+        - mUser : FirebaseUser
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.noanails.tiendaappadmin {
+    class com.noanails.tiendaappadmin.Usuarios {
+        ~ elements : List<ListElement_Usuarios>
+        ~ mAuth : FirebaseUser
+        ~ mDatabase : DatabaseReference
+        - ap1BBDD : String
+        - ap2BBDD : String
+        - emailBBDD : String
+        - idUsuario : String
+        - nTelfBBDD : String
+        - nombreBBDD : String
+        + insertElements()
+        + recogerUsuarios()
+        # onCreate()
+    }
+  }
+  
+
+  com.noanails.tiendaappadmin.Administracion -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.Citas .up.|> android.widget.SearchView.OnQueryTextListener
+  com.noanails.tiendaappadmin.Citas -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.Citas o-- clasesObjeto.ListAdapterCitas : listAdapterCitas
+  com.noanails.tiendaappadmin.Login -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.Modificar_Citas -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.Modificar_Usuarios -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.SplashScreenMain -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.Usuarios -up-|> androidx.appcompat.app.AppCompatActivity
+  com.noanails.tiendaappadmin.Usuarios o-- clasesObjeto.ListAdapterUsuarios : listAdapterUsuarios
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
