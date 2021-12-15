@@ -1,20 +1,18 @@
 package com.noanails.tiendaappadmin;
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,12 +27,15 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Esta clase es la encargada de dar funcionalidad al activity_modificar_citas.
+ */
 public class Modificar_Citas extends AppCompatActivity {
 
     private RadioButton hora9, hora10, hora11, hora12, hora15, hora16, hora17, hora18, hora19;
     private RadioGroup rg;
-    private Button confirmar,fecha,volver;
-    private String fechaCompletaTv,horaCita,fechaBBDD,horaBBDD,id,servicioBBDD,idRefTablaButton,textHint,nombreBBDD,nTelfBBDD,emailBBDD,idUsuario="";
+    private Button confirmar, fecha, volver;
+    private String fechaCompletaTv, horaCita, fechaBBDD, horaBBDD, id, servicioBBDD, idRefTablaButton, textHint, nombreBBDD, nTelfBBDD, emailBBDD, idUsuario = "";
     int radioId;
     RadioButton selectedbutton;
     Bundle bundle;
@@ -82,6 +83,9 @@ public class Modificar_Citas extends AppCompatActivity {
 
         calendarDate();
 
+        /**
+         * Evento que accede al método "calendarDate()" para seleccionar fecha.
+         */
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +93,10 @@ public class Modificar_Citas extends AppCompatActivity {
             }
         });
 
-        //Método para que cuando pulsamos sobre el button realice una acción.
+        /**
+         * Evento que accede al método para que cuando pulsamos sobre el botón "Confirmar" haga las
+         * comprobaciones y acceda al método "modificador()"
+         */
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +113,9 @@ public class Modificar_Citas extends AppCompatActivity {
             }
         });
 
+        /**
+         * Evento que accede a la clase y activity de "Bienvenida" al pulsar el botón "Vovler".
+         */
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,8 +124,10 @@ public class Modificar_Citas extends AppCompatActivity {
         });
     }
 
-    //Método para que cuando pulsamos muestre calendario.
-    public void calendarDate(){
+    /**
+     * Método para que cuando pulsamos muestre el calendario.
+     */
+    public void calendarDate() {
         Calendar calendario = Calendar.getInstance();
         int dia = calendario.get(Calendar.DAY_OF_MONTH);
         int mes = calendario.get(Calendar.MONTH);
@@ -126,20 +138,22 @@ public class Modificar_Citas extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 fechaCompletaTv = dayOfMonth + "/" + (month + 1) + "/" + year;
-                textHint=fecha.getText().toString() + " ";
-                fecha.setText(textHint+fechaCompletaTv);
+                textHint = fecha.getText().toString() + " ";
+                fecha.setText(textHint + fechaCompletaTv);
                 extraerValores();
             }
         }
                 , anyo, mes, dia);
         datePikerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#8AB7E6")));
 
-        //Fecha mínima, para evitar citas de dias anteriores al actual.
+        //Fecha mínima, para evitar citas de días anteriores al actual.
         datePikerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
         datePikerDialog.show();
     }
 
-    //Método que realiza la consulta en la base de datos para compararlos datos.
+    /**
+     * Método que realiza la consulta en la base de datos para recoger los datos.
+     */
     public void extraerValores() {
         mDatabase.child("Reservas").addValueEventListener(new ValueEventListener() {
             @Override
@@ -169,7 +183,9 @@ public class Modificar_Citas extends AppCompatActivity {
         });
     }
 
-    //Método que recorre el array y compara los datos en la base de datos para desactivar radioButtons.
+    /**
+     * Método que recorre el array y compara los datos en la base de datos para desactivar radioButtons.
+     */
     public void comparador() {
         String textoRB;
         RadioButton selectedbutton;
@@ -184,7 +200,9 @@ public class Modificar_Citas extends AppCompatActivity {
         }
     }
 
-    //Método que activa de nuevo los radioButtons cada vez que cambias de fecha.
+    /**
+     * Método que activa de nuevo los radioButtons cada vez que cambias de fecha.
+     */
     public void retornarEstado() {
         String textoRB;
         RadioButton selectedbutton;
@@ -195,9 +213,10 @@ public class Modificar_Citas extends AppCompatActivity {
         rg.clearCheck();
     }
 
-    //Método que modifica los campos en la base de datos.
+    /**
+     * Método que modifica los campos en la base de datos.
+     */
     public void modificador() {
-
         mDatabase.child("Reservas").child(idRefTablaButton).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

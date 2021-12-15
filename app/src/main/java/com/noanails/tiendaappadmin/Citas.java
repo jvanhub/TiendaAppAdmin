@@ -27,14 +27,17 @@ import java.util.List;
 import clasesObjeto.ListAdapterCitas;
 import clasesObjeto.ListElement_Citas;
 
+/**
+ * Esta clase es la encargada de dar funcionalidad al activity_citas.
+ */
 public class Citas extends AppCompatActivity implements SearchView.OnQueryTextListener {
-    private String servicioBBDD,fechaBBDD,horaBBDD,uId,id,idCita, nombreBBDD, nTelfBBDD, emailBBDD,idUsuario="";
+    private String servicioBBDD, fechaBBDD, horaBBDD, uId, id, idCita, nombreBBDD, nTelfBBDD, emailBBDD, idUsuario = "";
     private SearchView sv;
     ListAdapterCitas listAdapterCitas;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
-    List<ListElement_Citas>elements;
-    private String servicio="";
+    List<ListElement_Citas> elements;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,11 @@ public class Citas extends AppCompatActivity implements SearchView.OnQueryTextLi
         elements = new ArrayList<>();
         recogerCitas();
         initListener();
+
+        /**
+         * Evento encargado de acceder al método de "recogerCitas" que se encarga de consultar la
+         * BBDD de todas las citas y mostrarlas.
+         */
         verCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,21 +64,27 @@ public class Citas extends AppCompatActivity implements SearchView.OnQueryTextLi
             }
         });
 
+        /**
+         * Evento que accede a la clase y activity de "Administración" al pulsar el botón "Vovler".
+         */
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Citas.this, Administracion.class));
             }
         });
-
-
     }
-    //
-    private void initListener(){
+
+    /**
+     * Método que se encarga de poder realizar la busqueda de citas.
+     */
+    private void initListener() {
         sv.setOnQueryTextListener(Citas.this);
     }
 
-    //Metodo para recoger todas las fechas desde el día de hoy incuido, las fechas pasadas no.
+    /**
+     * Método encargado de recoger, comparar e insertar los datos junto con los elementos.
+     */
     public void recogerCitas() {
         mDatabase.child("Reservas").addValueEventListener(new ValueEventListener() {
             @Override
@@ -93,12 +107,12 @@ public class Citas extends AppCompatActivity implements SearchView.OnQueryTextLi
                         emailBBDD = snapshot.child("email").getValue().toString();
                         String extractFecha[] = fechaBBDD.split("/");
                         idCita = snapshot.getKey();
-                        if(((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)){
+                        if (((Integer.parseInt(extractFecha[2]) - anyo) >= 0) && ((Integer.parseInt(extractFecha[1]) - mes) >= 0) && ((Integer.parseInt(extractFecha[0]) - dia) >= 0)) {
                             insertElements();
                         }
 
                     }
-                }catch (NullPointerException n){
+                } catch (NullPointerException n) {
                     Toast.makeText(Citas.this, "No hay citas pendientes", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -109,9 +123,12 @@ public class Citas extends AppCompatActivity implements SearchView.OnQueryTextLi
             }
         });
     }
-    //Método encargado de crear e introducir los datos en cada elemento.
+
+    /**
+     * Método encargado de crear e introducir los datos en cada elemento.
+     */
     public void insertElements() {
-        elements.add(new ListElement_Citas(servicioBBDD,fechaBBDD, horaBBDD, idCita, nombreBBDD, nTelfBBDD, emailBBDD));
+        elements.add(new ListElement_Citas(servicioBBDD, fechaBBDD, horaBBDD, idCita, nombreBBDD, nTelfBBDD, emailBBDD));
         listAdapterCitas = new ListAdapterCitas(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -119,19 +136,21 @@ public class Citas extends AppCompatActivity implements SearchView.OnQueryTextLi
         recyclerView.setAdapter(listAdapterCitas);
     }
 
+    /**
+     * Los siguientes 3 metos se implementan con SearchView.OnQueryTextListener, que sirven para poder
+     * relizar la busqueda de las citas
+     */
+
     @Override
     public boolean onQueryTextSubmit(String query) {
         return false;
     }
-
     @Override
     public boolean onQueryTextChange(String newText) {
         listAdapterCitas.filter(newText);
         return false;
     }
-
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 }

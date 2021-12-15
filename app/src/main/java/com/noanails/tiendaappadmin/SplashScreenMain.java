@@ -11,7 +11,9 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
+/**
+ * Esta clase es la encargada de dar funcionalidad al activity_splash_screen.
+ */
 public class SplashScreenMain extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -23,6 +25,10 @@ public class SplashScreenMain extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+
+        /**
+         * Se encarga de verificar si el usuario verifico el email.
+         */
         TimerTask tt = new TimerTask() {
             @Override
             public void run() {
@@ -41,6 +47,7 @@ public class SplashScreenMain extends AppCompatActivity {
             }
         };
 
+        //Se encarga de mantener X tiempo el activity abierto.
         Timer tiempo = new Timer();
         tiempo.schedule(tt,2500);
     }

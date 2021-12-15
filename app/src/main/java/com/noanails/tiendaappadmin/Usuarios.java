@@ -7,10 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.SearchEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,13 +22,16 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import clasesObjeto.ListAdapterCitas;
 import clasesObjeto.ListAdapterUsuarios;
 import clasesObjeto.ListElement_Usuarios;
 
+
+/**
+ * Esta clase es la encargada de dar funcionalidad al activity_usuarios.
+ */
 public class Usuarios extends AppCompatActivity {
 
-    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,idUsuario;
+    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD, idUsuario;
     FirebaseUser mAuth;
     DatabaseReference mDatabase;
     ListAdapterUsuarios listAdapterUsuarios;
@@ -40,15 +41,19 @@ public class Usuarios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
-
-
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         Button volver = (Button) findViewById(R.id.buttonVolver2);
         elements = new ArrayList<>();
 
+        /**
+         * Método que carga los usuarios.
+         */
         recogerUsuarios();
 
+        /**
+         * Evento que accede a la clase y activity de "Bienvenida" al pulsar el botón "Vovler".
+         */
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +63,9 @@ public class Usuarios extends AppCompatActivity {
     }
 
 
-    //Se encarga de recoger, comparar e insertar los datos junto con los elementos.
+    /**
+     * Método encargado de recoger, comparar e insertar los datos junto con los elementos.
+     */
     public void recogerUsuarios() {
         mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
             @Override
@@ -87,9 +94,11 @@ public class Usuarios extends AppCompatActivity {
         });
     }
 
-    //Método encargado de crear e introducir los datos en cada elemento.
+    /**
+     * Método encargado de crear e introducir los datos en cada elemento.
+     */
     public void insertElements() {
-        elements.add(new ListElement_Usuarios(nombreBBDD, ap1BBDD, ap2BBDD,nTelfBBDD,emailBBDD,idUsuario));
+        elements.add(new ListElement_Usuarios(nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD, idUsuario));
         listAdapterUsuarios = new ListAdapterUsuarios(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);

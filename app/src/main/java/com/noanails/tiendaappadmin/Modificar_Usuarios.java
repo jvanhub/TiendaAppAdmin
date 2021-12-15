@@ -20,11 +20,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Esta clase es la encargada de dar funcionalidad al activity_modificar_usuarios.
+ */
 public class Modificar_Usuarios extends AppCompatActivity {
     Bundle bundle;
     private Button btConfir, btVolver;
     private EditText etNombre, etAp1, etAp2, etTelf, etEmail;
-    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,email,idUsu, idRefTablaButton="";
+    private String nombreBBDD, ap1BBDD, ap2BBDD, nTelfBBDD, emailBBDD,nombre, ap1, ap2, nTelf,email, idRefTablaButton="";
     FirebaseAuth mmAuth;
     DatabaseReference mmDatabase;
 
@@ -47,6 +50,9 @@ public class Modificar_Usuarios extends AppCompatActivity {
         etTelf = findViewById(R.id.editTextModPhone);
         etEmail = findViewById(R.id.editTextModEmail);
 
+        /**
+         * Se encarga de recoger y filtrar todos los usuarios.
+         */
         mmDatabase.child("Usuarios").child(idRefTablaButton).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -67,6 +73,11 @@ public class Modificar_Usuarios extends AppCompatActivity {
 
                 }
             });
+
+        /**
+         * Evento que accede al método para que cuando pulsamos sobre el botón "Confirmar" haga las
+         * comprobaciones y acceda al método "modificarDatosBBDD()"
+         */
         btConfir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +95,10 @@ public class Modificar_Usuarios extends AppCompatActivity {
                 }
             }
         });
+
+        /**
+         * Evento que accede a la clase y activity de "Bienvenida" al pulsar el botón "Vovler".
+         */
         btVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +107,9 @@ public class Modificar_Usuarios extends AppCompatActivity {
         });
     }
 
+    /**
+     * Método que modifica los campos en la base de datos.
+     */
     public void modificarDatosBBDD(){
         Map<String, Object> map = new HashMap<>();
         map.put("nombres", nombre);
