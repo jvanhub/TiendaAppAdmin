@@ -93,7 +93,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/txtvw"
                 android:ems="10"
-                android:enabled="false"
                 android:fontFamily="serif"
                 android:hint="@string/num_telf2"
                 android:importantForAutofill="no"
@@ -116,6 +115,7 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textStyle="italic"
+                android:enabled="false"
                 android:importantForAutofill="no" />
             <Space
                 android:layout_width="match_parent"
